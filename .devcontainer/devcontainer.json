@@ -3,7 +3,12 @@
   "context": "..",
   "dockerFile": "../docker/Dockerfile.dev",
   "postCreateCommand": "mkdir -p config && pip3 install -e .",
-  "runArgs": ["--privileged", "-e", "ESPHOME_DASHBOARD_USE_PING=1"],
+  "runArgs": [
+    "--privileged",
+    "-e",
+    "ESPHOME_DASHBOARD_USE_PING=1",
+    "--device=/dev/ttyUSB0"
+  ],
   "appPort": 6052,
   "extensions": [
     "ms-python.python",
